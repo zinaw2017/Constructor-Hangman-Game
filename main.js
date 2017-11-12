@@ -10,7 +10,7 @@ prompt.start();
 
 
 game = {
- 	wordBank: ['Facebook', 'Google', 'Youtube', 'snapchat', 'whatsupp', 'skype', 'twitter'],
+ 	wordBank: ['Facebook', 'Google', 'Youtube', 'snapchat', 'whatsApp', 'skype', 'twitter'],
  	wordsWon: 0,
  	guessesRemaining: 10,
  	currentWrd: null,
