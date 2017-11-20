@@ -1,59 +1,18 @@
 {
-  "_from": "wrappy@1",
-  "_id": "wrappy@1.0.2",
-  "_inBundle": false,
-  "_integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=",
-  "_location": "/wrappy",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "wrappy@1",
-    "name": "wrappy",
-    "escapedName": "wrappy",
-    "rawSpec": "1",
-    "saveSpec": null,
-    "fetchSpec": "1"
-  },
-  "_requiredBy": [
-    "/inflight",
-    "/once"
-  ],
-  "_resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
-  "_shasum": "b5243d8f3ec1aa35f1364605bc0d1036e30ab69f",
-  "_spec": "wrappy@1",
-  "_where": "C:\\Users\\tsion\\Desktop\\Constructor-Hangman-Game\\node_modules\\inflight",
-  "author": {
-    "name": "Isaac Z. Schlueter",
-    "email": "i@izs.me",
-    "url": "http://blog.izs.me/"
-  },
-  "bugs": {
-    "url": "https://github.com/npm/wrappy/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {},
-  "deprecated": false,
-  "description": "Callback wrapping utility",
-  "devDependencies": {
-    "tap": "^2.3.1"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "files": [
-    "wrappy.js"
-  ],
-  "homepage": "https://github.com/npm/wrappy",
-  "license": "ISC",
-  "main": "wrappy.js",
-  "name": "wrappy",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/npm/wrappy.git"
-  },
+  "name": "mysql-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
   "scripts": {
-    "test": "tap --coverage test/*.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.2"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "inquirer": "^4.0.0",
+    "is-letter": "^1.1.1",
+    "islet": "0.0.2",
+    "letter": "0.0.1"
+  }
 }

@@ -1,44 +1,56 @@
-var letter = require('./letter.js');
+// require letter objects
+var Letter = require('./letter.js');
 
-function Word(target) {
-	this.target = target;
-	this.lets = [];
-	this.found = false;
+function Word(wrd) {
+  var that = this;
+  //store the string wrd
+  this.word = wrd;
+  //collection of letter objects
+  this.letters = [];
+  this.wordFound = false;
 
-	this.getLet = function() {
-		for (var i=0; i < this.target.length; i++) {
-			this.lets.push( new letter(this.target[i]));
-		}
-	};
+  this.getLets = function() {
+    //populate the collection above with new Letter objects
+    for(var i = 0; i<that.word.length; i++){
+      var newLetter = new Letter(that.word[i]);
+      this.letters.push(newLetter);
+    }
+  };
 
-	this.findWord = function() {
-		this.found = this.lets.every(function(currLett) {
-			return currLett.appear;
-		});
-		return this.found;
-	};
+  //found the current word
+  this.didWeFindTheWord = function() {
+    if(this.letters.every(function(lttr){
+      return lttr.appear === true;
+    })){
+      this.wordFound = true;
+      return true;
+    }
 
-	this.checkLetter = function(guessLet) {
-		var toReturn = 0;
+  };
 
-		for (var i = 0; i < this.lets.length; i++) {
-			if (this.lets[i].charac == guessLet){
-				this.lets[i].appear = true;
-				toReturn++;
-			}
-		}
-		return toReturn;
-	};
+  this.checkIfLetterFound = function(guessedLetter) {
+    var whatToReturn = 0;
+    //iterates through each letter to see if it matches the guessed letter
+    this.letters.forEach(function(lttr){
+      if(lttr.letter === guessedLetter){
+        lttr.appear = true;
+        whatToReturn++;
+      }
+    })
+    //if guessLetter matches Letter property, the letter object should be shown
+    return whatToReturn;
+  };
 
-	this.wordRender = function() {
-		var string = '';
-		for (var i=0; i < this.lets.length; i++){
-			string += this.lets[i].letterRender();
-		}
-		return string;
-	};
+  this.wordRender = function() {
+    var display = '';
+    //render the word based on if letters are found or not
+    that.letters.forEach(function(lttr){
+      var currentLetter = lttr.letterRender();
+      display+= currentLetter;
+    });
 
+    return display;
+  };
 }
 
 module.exports = Word;
-
